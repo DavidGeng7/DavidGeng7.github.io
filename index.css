@@ -1,0 +1,24 @@
+body{
+    margin: 0;
+    font-family: 'Proxima Nova', Fallback, sans-serif;
+}
+.topnav {
+    width: 100%;
+    overflow: hidden;
+    background-color: #2e2e2e;
+}
+
+.topnav a{
+    FLOAT:  left;
+    color: white;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: whitesmoke;
+    color: black;
+}
