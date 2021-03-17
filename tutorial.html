@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-    <meta charset = "utf-8">
-    <meta name = "viewport" content = "width = device-width, inital-scale = 1.0">
-    <link rel = "stylesheet" href = "index.css">
-    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <head>
         <title>
             David Geng's Portfolio
         </title>
+        <meta charset = "utf-8">
+        <meta name = "viewport" content = "width = device-width, inital-scale = 1.0">
+        <link rel = "stylesheet" href = "index.css">
+        <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
     <body>
@@ -16,8 +16,14 @@
         </div>
 
         <div class = "topnav">
-            <a href = "index.html">Home</a>
-            <a href = "tutorial.html">Tutorial</a>
+            <a href = "index.html"><i class="fa fa-home"></i> Home</a>
+            <a href = "about.html"><i class="fa fa-user"></i> About Me</a>
+            <div class = "subnav">
+                <button class = "tutorial">Tutorials <i class = "fa fa-caret-down"></i></button>
+                <div class = "subnav-body">
+                    <a class = "active" href = "tutorial.html">Tutorial</a>
+                </div>
+            </div>
             <a href = "biblio.html">Bibliography</a>
         </div>
 
