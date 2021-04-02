@@ -8,6 +8,8 @@
         <meta name = "viewport" content = "width = device-width, inital-scale = 1.0">
         <link rel = "stylesheet" href = "index.css">
         <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/default.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"></script>
     </head>
 
     <body>
@@ -34,12 +36,82 @@
         </div>
 
         <div class = "content">
+            <h3>Overview</h3>
+            <p>
+                This tutorial will teach you about the basics of the Array data structure in Java. Arrays are extremely useful data stucture in many situations
+                due to its ability to hold a large amount of value of the same data type.
+                <br>
+                <br>
+                Arrays have a fixed size, meaning once you create an array object, its length cannot be modified.
+                <br>
+                <br>
+                Each value inside an array is called an element, which can be accessed by its unique index. The index of an array starts at 0,
+                so the 1st element is accociated with index 0, 2nd with index 1, 3rd with index 2, and so on.
+                <br>
+                <br>
+                You can declare and initialize an array by using the following syntax:
+            </p>
+<pre><code class = "language-java hljs">int [] arr1 = new int[3];
+arr1[0] = 0;
+arr1[1] = 1;
+arr1[2] = 2;
 
+int [] arr2 = {0, 1, 2};
+</code></pre>
+
+            <p>
+                The general rule is as follows:
+            </p>
+            <code>
+                dataType [] identifier = new dataType [size];
+            </code>
+            <p>
+                You can access a supecific element by using <code>identifier[index]</code>, or access all elements of an array once using a for loop:
+            </p>
+
+<pre><code class = "language-java hljs">int [] arr = {1, 3, 5, 7, 9, 11};
+System.out.println(arr[0]) <span class = "hljs-comment">//Prints 1</span>
+for(int i = 0; i < arr.length; i++)
+    System.out.println("Element at index " + i + " is " + arr[i]);</code></pre>
+            
+            <br>
+            <h3>2D Arrays</h3>
+            <p>
+                An array can be multi-dimensional, which are arrays of arrays. The number of square brackets indicates the dimensions in the multi-dimentsional array.
+                In the case of a 2D array, there are two square brackets indicating row and col number.
+                <br>
+                <br>
+            </p>
+                You can declare and initialize an 2D array by using the following syntax:
+<pre><code class = "language-java hljs">int [][] arr2D1 = new int [2][2];
+arr2D1[0][0] = 1;
+
+int [][] arr2D2 = {{1, 2, 3}, {4, 5, 6}};
+</code></pre>
+
+            <p>
+                To access a specific element of a 2D array, you need to specify the index for each of the square brackets or traverse it using a nested for loop to access all elements in the 2D array once.
+            </p>
+<pre><code class = "language-java hljs">int [][] arr = {{1, 2, 3, 4,}, {5, 6, 7, 8}};
+int element = arr[0][0] <span class = "hljs-comment">//element = 1</span>
+for(int row = 0; row < arr.length; row ++){
+    for(int col = 0; col< arr.length; col ++)
+        System.out.println("Element at row " + row + " and col " + col " is " + arr[row][col]);
+}
+</code></pre>
+            <br>
+            <p>
+                One issue with Array is that its size cannot be modified once it is declared, which is why Java offers an alternative class called ArrayList which you can learn in the ArrayList tutorial.
+            </p>
         </div>
 
         <div class = "footer">
-            <a href = "https://dmoj.ca/user/Supreme_Leader"><img src = "dmoj.png" alt = "My Dmoj Account" style = "height: 50px;"></a>
-            <a href = "https://github.com/DavidGeng7"><i class = "fa fa-github"></i></a>
+            <p></p>
+            <a href = "https://dmoj.ca/user/Supreme_Leader"><img src = "dmoj.png" alt = "My DMOJ Account" style = "height: 65px; width: 65px"></a>
+            <a href = "https://github.com/DavidGeng7"><img src = "github.png" alt = "My Github Account" style = "height: 60px; width: 60px; margin-left: 50px"></a>
+            <a href = "https://mcpt.ca/user/Supreme_Leader"><img src = "mcpt.png" alt = "My MCPT Account" style = "height: 60px; width: 60px; margin-left: 50px"></a>
+            <a href = "mailto:davidgeng007@gmail.com"><img src = "email.png" alt = "Send Email" style = "height: 60px; width: 60px; margin-left: 50px"></a>
+            <p>@ Copyright 2021, David Geng</p>
         </div>
     </body>
 </html>

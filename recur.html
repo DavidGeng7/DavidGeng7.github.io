@@ -8,6 +8,8 @@
         <meta name = "viewport" content = "width = device-width, inital-scale = 1.0">
         <link rel = "stylesheet" href = "index.css">
         <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/default.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"></script>
     </head>
 
     <body>
@@ -34,12 +36,37 @@
         </div>
 
         <div class = "content">
-
+            <h3>Overview</h3>
+            <p>This tutorial will cover the basics of recursion and recursive functions in Java. Recursion basically makes a method call itself over and over again. This technique can break complicated problems down to simple problems which are easier to solve.</p>
+            <p>All recursions have a base case and a recursive case. Base cases have no recursive calls, and recursive case calls itself, but usually for a “smaller” task. A recursion method must eventually come to a base case, where recursion stops. In the case that it does not come to a base case, an error will be created due to the recursion running infinitely.</p>
+            <br><p>Below is an example of recursion to find the value of base^exponent.</p>
+<pre><code class = "language-java hljs">public int exponent (int b, int e)
+{
+    if(e == 0)
+        return 1;
+    return b * exponent (b, e - 1);
+}
+</code></pre>
+            <p>The base case here is <code>e == 0</code> where we return 1 as <code>b^0</code> is always 1.
+                In the case where <code>b = 2</code> and <code>e = 3</code>, the recursion basically works like this:
+                <ul>
+                    <li><code>2 * exponent(2, 2)</code></li>
+                    <li><code>2 * (2 * exponent (2, 1))</code></li>
+                    <li><code>2 * (2 * (2 * exponent (2, 0))</code></li>
+                    <li><code>2 * (2 * (2 * (1))) = 8</code></li>
+                </ul>
+            </p>
+            <br><p>Although recursion can solve complicated problems easily, and have many implementations, it can be hard to understand for people reading the program. It can also be hard to come up with a recursive function to perform a specific task, which is why some prefer iterative functions over recursive functions.</p>
+            <br><p>In summary, recursion is the act of a method calling itself. It must have a recursive case and base case. And it can be hard to understand, so take your time!</p>
         </div>
 
         <div class = "footer">
-            <a href = "https://dmoj.ca/user/Supreme_Leader"><img src = "dmoj.png" alt = "My Dmoj Account" style = "height: 50px;"></a>
-            <a href = "https://github.com/DavidGeng7"><i class = "fa fa-github"></i></a>
+            <p></p>
+            <a href = "https://dmoj.ca/user/Supreme_Leader"><img src = "dmoj.png" alt = "My DMOJ Account" style = "height: 65px; width: 65px"></a>
+            <a href = "https://github.com/DavidGeng7"><img src = "github.png" alt = "My Github Account" style = "height: 60px; width: 60px; margin-left: 50px"></a>
+            <a href = "https://mcpt.ca/user/Supreme_Leader"><img src = "mcpt.png" alt = "My MCPT Account" style = "height: 60px; width: 60px; margin-left: 50px"></a>
+            <a href = "mailto:davidgeng007@gmail.com"><img src = "email.png" alt = "Send Email" style = "height: 60px; width: 60px; margin-left: 50px"></a>
+            <p>@ Copyright 2021, David Geng</p>
         </div>
     </body>
 </html>

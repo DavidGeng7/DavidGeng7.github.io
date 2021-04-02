@@ -8,6 +8,8 @@
         <meta name = "viewport" content = "width = device-width, inital-scale = 1.0">
         <link rel = "stylesheet" href = "index.css">
         <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/default.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"></script>
     </head>
 
     <body>
@@ -34,12 +36,52 @@
         </div>
 
         <div class = "content">
-
+            <h3>Overview</h3>
+            <p>
+                This tutorial will teach you the basics of the ArrayList data structure in Java. ArrayList is basically Arrays with the ability to change size. It can be considered an upgraded version of Array. 
+                Although its downside is that it can take up a lot of memory space due to its flexibility.
+                <br><br>
+                To create an ArrayList, you must first import the Java utilities package using <code>import java.util.*;</code> as ArrayList is not built-in. 
+                The data type of an ArrayList must always be a class instead of a primitive, i.e. <code>Integer, String, </code>etc.
+                <br><br>
+                The syntax to create an ArrayList is as follows:
+            </p>
+<pre><code class = "language-java hljs">ArrayList &lt;Integer&gt; arrlist = new ArrayList &lt;Integer&gt;();
+</code></pre>
+            <p>
+                There are only a couple of important methods to manipulate an ArrayList that you should know and remember, the other methods associated with the class can be found in the Java documentation.
+                These methods include: <code>size()</code>, <code>add()</code>, <code>set()</code>, <code>get()</code>, <code>remove()</code>. <br><br>
+                Usage are as follows: 
+                <ul>
+                    <li><code>add()</code> adds an element to the arraylist</li>
+                    <li><code>size()</code> gets the size of the arraylist</li>
+                    <li><code>set()</code> sets a specific index of the arraylist to a new element</li>
+                    <li><code>remove()</code> removes the element at a specific index</li>
+                    <li><code>get()</code> gets the element at a specific index</li>
+                </ul>
+            </p>
+<pre><code class = "language-java hljs">ArrayList &lt;Integer&gt; arrlist = new ArrayList &lt;Integer&gt;();
+arrlist.add(7);
+arrlist.add(17);
+arrlist.add(77);
+System.out.println(arrlist.get(2)); <span class = "hljs-comment">//print 77</span>
+System.out.println(arrlist.size()); <span class = "hljs-comment">//print 3</span>
+arrlist.remove(0) <span class = "hljs-comment">//removes 7</span>
+arrlist.set(0, 4) <span class = "hljs-comment">//change 17 to 4</span>
+</code></pre>
+            <p>
+                As discussed before, although flexibility is great, ArrayList uses more memory space and is generally slower than Array, which makes Arrays the better pick most of the times. 
+                One should only use ArrayList when the size changeability of the ArrayList is needed.
+            </p>
         </div>
 
         <div class = "footer">
-            <a href = "https://dmoj.ca/user/Supreme_Leader"><img src = "dmoj.png" alt = "My Dmoj Account" style = "height: 50px;"></a>
-            <a href = "https://github.com/DavidGeng7"><i class = "fa fa-github"></i></a>
+            <p></p>
+            <a href = "https://dmoj.ca/user/Supreme_Leader"><img src = "dmoj.png" alt = "My DMOJ Account" style = "height: 65px; width: 65px"></a>
+            <a href = "https://github.com/DavidGeng7"><img src = "github.png" alt = "My Github Account" style = "height: 60px; width: 60px; margin-left: 50px"></a>
+            <a href = "https://mcpt.ca/user/Supreme_Leader"><img src = "mcpt.png" alt = "My MCPT Account" style = "height: 60px; width: 60px; margin-left: 50px"></a>
+            <a href = "mailto:davidgeng007@gmail.com"><img src = "email.png" alt = "Send Email" style = "height: 60px; width: 60px; margin-left: 50px"></a>
+            <p>@ Copyright 2021, David Geng</p>
         </div>
     </body>
 </html>

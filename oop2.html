@@ -8,11 +8,13 @@
         <meta name = "viewport" content = "width = device-width, inital-scale = 1.0">
         <link rel = "stylesheet" href = "index.css">
         <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/default.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"></script>
     </head>
 
     <body>
         <div class = "header">
-            <h1>Inheritance - Polymorphism - Abstraction</h1>
+            <h1>Inheritance - Polymorphism</h1>
         </div>
 
         <div class = "topnav">
@@ -34,12 +36,106 @@
         </div>
 
         <div class = "content">
+            <h3>Overview</h3>
+            <p>This tutorial will teach you more advanced OOP concepts in Java, namely inheritance and polymorphism. If you have not read the basic OOP tutorial, be sure to read it first as you need the basic concept before moving onto a higher level.</p>
+            <p>Let’s suppose that you have two very similar classes, the car class and the raceCar class, both with similar attributes and methods. But you are lazy and do not wish to write the full code for both classes. You can use the concept of inheritance to help you.</p>
+            <br><p>Consider the following Car and RaceCar class</p>
+            
+<pre><code class = "language-java hljs">public class Car
+{
+    private String color;
+    private int gas;
 
+    public Car() {
+        color = gray;
+        gas = 100;
+    }
+
+    public void drive (int km)
+    {
+        gas -= km/3;
+    }
+}
+    
+public class RaceCar
+{
+    private String color;
+    private int gas;
+    private int topSpeed;
+
+    public RaceCar()
+    {
+        color = gray;
+        gas = 100;
+        topSpeed = 300;
+    }
+
+    public void drive (int km)
+    {
+        gas -= km/3;
+    }
+
+    public void race ()
+    {
+        gas -= km;
+    }
+}
+    
+</code></pre>
+            <p>
+                As you can see, the Car and RaceCar class share many similarities and repeated code which can be negated. You can also see that RaceCar really is just a type of Car. 
+                <br><br><br>Although there are still some differences between them, they are largely the same thing. We can use the concept of inheritance to negate the extra code.
+            </p>
+<pre><code class = "language-java hljs"><span class = "hljs-comment">//Same Car class</span>
+public RaceCar extends Car
+{
+    private int topSpeed;
+
+    public RaceCar()
+    {
+        super();
+        topSpeed = 300;
+    }
+
+    public void race ()
+    {
+        gas -= km;
+    }
+}
+</code></pre>
+            <p>
+                What we did here is that we made Car a superclass and RaceCar a subclass. The <b>extends</b> keyword marks the RaceCar as a subclass of the Car superclass. This means that RaceCar will inherit all the attributes (variables) and methods of the Car class without writing the same code again.
+            </p>
+            <p>The <b>super()</b> calls the super constructor, which essentially creates a Car object within the RaceCar class which allows the subclass to inherit attributes and use the method of the superclass.</p>
+            <p>The access modifiers are still enforced even if two classes are linked by inheritance, so make sure to use get and set methods to access variables when needed.</p>
+            <p>Note that all Java objects have a common ancestor, they are all subclasses of the Object class in java.</p>
+            <br><p>Suppose that we create another subclass of the Car class, OldCar.</p>
+<pre><code class = "language-java hljs">
+public class OldCar extends Car 
+{
+    public OldCar() {
+        super();
+    }
+
+    public void drive (int km)
+    {
+        gas -= km*2;
+    }
+}
+</code></pre>
+            <p>An old car uses a lot more fuel to drive, so when an OldCar object is declared and the drive method is called, the drive method in the class will <b>override</b> the drive method of the super class. This means that it will always use km*2 gas instead of km/3 gas when the drive method is run for the OldCar object. Java will always default to the method closest associated with the object type.</p>
+            <br><h3>Polymorphism</h3>
+            <p>Polymorphism is a concept in Java that basically ensures that a correct method is called for an object of a specific type, even if we reference a subclass to a superclass. This ties into the idea of method overriding which makes sure that the method that is most associated with the object is called.</p>
+            <br><p>This concludes all of the OOP tutorials, now you can create your own objects and interact with them using concepts that you learned.</p>
         </div>
         
         <div class = "footer">
-            <a href = "https://dmoj.ca/user/Supreme_Leader"><img src = "dmoj.png" alt = "My Dmoj Account" style = "height: 50px;"></a>
-            <a href = "https://github.com/DavidGeng7"><i class = "fa fa-github"></i></a>
+            <p></p>
+            <a href = "https://dmoj.ca/user/Supreme_Leader"><img src = "dmoj.png" alt = "My DMOJ Account" style = "height: 65px; width: 65px"></a>
+            <a href = "https://github.com/DavidGeng7"><img src = "github.png" alt = "My Github Account" style = "height: 60px; width: 60px; margin-left: 50px"></a>
+            <a href = "https://mcpt.ca/user/Supreme_Leader"><img src = "mcpt.png" alt = "My MCPT Account" style = "height: 60px; width: 60px; margin-left: 50px"></a>
+            <a href = "mailto:davidgeng007@gmail.com"><img src = "email.png" alt = "Send Email" style = "height: 60px; width: 60px; margin-left: 50px"></a>
+            <p>@ Copyright 2021, David Geng</p>
         </div>
     </body>
 </html>

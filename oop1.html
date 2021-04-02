@@ -8,6 +8,8 @@
         <meta name = "viewport" content = "width = device-width, inital-scale = 1.0">
         <link rel = "stylesheet" href = "index.css">
         <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/default.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"></script>
     </head>
 
     <body>
@@ -34,12 +36,131 @@
         </div>
 
         <div class = "content">
+            <h3>Overview</h3>
+            <p>
+                Object-Oriented Programming (OOP) is a type of programming that is centred around creating objects with attributes and controlling them through methods. 
+                <br><br>An object is created from a class, which serves as a blueprint for the object. 
+                A class contains variables, which define the characteristics of the object created, and methods, which define the action of the objects created. 
+                <br><br>All classes contain a special method called a constructor, which the class uses to create the object and initialize the fields of the class. 
+                The constructor always has the same name as the class and without a return type. If a class has no explicit constructor, Java provides a default empty no-argument constructor.
+                <br><br>
+                An example Dog class:
+            </p>
+<pre><code class = "language-java hljs">public class Dog
+{
+    private String name;
+    private int age;
+    private String owner;
 
+    public Dog()
+    {
+        name = "Bob";
+        age = 2;
+        owner = "Dave";
+    }
+
+    public Dog(String n, int a, String o)
+    {
+        name = n;
+        age = a;
+        owner = o;
+    }
+
+    public void bark()
+    {
+    	System.out.println(“woof woof”);
+    }
+}
+</code></pre>
+            <p>
+                The dog class has 3 fields, the dog’s name, the age of the dog, and the owner’s name. 
+                <br>The class has one method called bark(), which prints “woof woof” when called. 
+                <br>There are two constructors, one with arguments, and one without.
+                <br><br>
+                A Dog object can be created in the main method:
+            </p>
+<pre><code class = "language-java hljs">public static void main (String [] args)
+{
+    Dog dog1 = new Dog(“John”, 4, “Kev”);
+    dog1.bark();
+}
+</code></pre>
+            <p>
+                This creates a new instance/object of the Dog class and makes it bark. One can create multiple instances of the same class with different arguments.
+                
+                <br><br>
+            </p>
+            <h3>Encapsulation</h3>
+            <p>
+                You might ask, why do we set the attributes of a class as private instead of public? 
+                What difference does it make? This is where the idea of encapsulation comes in. 
+                Encapsulation is a core concept in OOP which basically states that a programmer should make sure that one can only access a minimal amount of information in the class instead of the entire class.
+                <br><br>
+                To achieve this in Java, one can use access modifiers: public and private to control the access level.
+                <br><br>
+                Only methods inside the class can access the private variables of a class, while public methods can be accessed outside of the class. Going back to the Dog class, name, age, and owner are all private, meaning they can only be accessed by methods inside the class. While the bark method is public, which is why we can access it in the main method.
+                <br><br>
+                So how to access private variables of a class then? One should employ get and set methods. The get method will return the variable value, and the set method will set the value of the variable. 
+                <br><br>
+                An example of get and set methods:
+            </p>
+<pre><code class = "language-java hljs">public class Dog
+{
+    private String name;
+    private int age;
+    private String owner;
+        
+    public Dog()
+    {
+        name = “Bob”;
+        age = 2;
+         owner = “Dave”;
+        
+    public Dog(String n, int a, String o)
+    {
+        name = n;
+        age = a;
+        owner = o;
+    }
+    
+    public void bark()
+    {
+        System.out.println(“woof woof”);
+    }
+
+    public String getName()
+    {
+        return name;
+    }
+
+    public String setName(String n)
+    {
+        name = n;
+    }
+}
+</code></pre>
+            <p>
+                The getName() will return the Dog's name when called, and the setName will set the name of the dog to the one passed in the parameter.
+                <br><br>
+                In conclusion, Object-Oriented Programming is a form of programming that focuses on the use of objects or instances of classes.
+                <br>
+                A class is a blueprint for building objects and include:
+                <ul>
+                    <li>Variables to define the attributes of the object</li>
+                    <li>Methods to define the behaviour of the object</li>
+                </ul>
+                <br><br>
+                One should always consider encapsulation in OOP as it restricts access to parts of the class. Use get and set methods to read and/or write data into the class when needed. Now that you understand the basic of OOP, it is time for some more advanced ideas which you can learn in the next part of the tutorial, OOP: Intermediate
+            </p>
         </div>
 
         <div class = "footer">
-            <a href = "https://dmoj.ca/user/Supreme_Leader"><img src = "dmoj.png" alt = "My Dmoj Account" style = "height: 50px;"></a>
-            <a href = "https://github.com/DavidGeng7"><i class = "fa fa-github"></i></a>
+            <p></p>
+            <a href = "https://dmoj.ca/user/Supreme_Leader"><img src = "dmoj.png" alt = "My DMOJ Account" style = "height: 65px; width: 65px"></a>
+            <a href = "https://github.com/DavidGeng7"><img src = "github.png" alt = "My Github Account" style = "height: 60px; width: 60px; margin-left: 50px"></a>
+            <a href = "https://mcpt.ca/user/Supreme_Leader"><img src = "mcpt.png" alt = "My MCPT Account" style = "height: 60px; width: 60px; margin-left: 50px"></a>
+            <a href = "mailto:davidgeng007@gmail.com"><img src = "email.png" alt = "Send Email" style = "height: 60px; width: 60px; margin-left: 50px"></a>
+            <p>@ Copyright 2021, David Geng</p>
         </div>
     </body>
 </html>

@@ -8,6 +8,8 @@
         <meta name = "viewport" content = "width = device-width, inital-scale = 1.0">
         <link rel = "stylesheet" href = "index.css">
         <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/default.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"></script>
     </head>
 
     <body>
@@ -34,11 +36,87 @@
         </div>
 
         <div class = "content">
+            <h3>Overview</h3>
+            <p>This tutorial will cover how to search for an element in an array and how to sort said array. Be sure to learn about array first in the array tutorial first before you start this tutorial.</p>
+            <br><h3>Searching</h3>
+            <p>There are two main ways to search for a value in an array, sequential search and binary search.</p>
+            <br><p>The most simple way to search is sequential search, where one basically loop through the entire array and compare each element with the key, or the value search for. The time complexity of this algorithm is O(n), meaning that the time it takes to loop n times increase linearly.</p>
+<pre><code class = "language-java hljs">public static int sequentialSearch(int [] arr, int key)
+{
+    for(int i = 0; i < arr.length; i++)
+    {
+        if(key == arr[i])
+            return i;
+    }
+    return -1;
+}
+</code></pre>
+            <br><p>The next way to search is binary search. The idea behind binary search is that if the middle value of the array or subarray is larger or smaller than the value searched, we can discard half of the current array. Repeat until there is only one value left. Downside to the search is that it requires the array to be sorted. The time complexity of the search is O(log n), which excels at large data sets as time grows slower as n grows.</p>
+<pre><code class = "language-java hljs">public static int binarySearch(int [] arr, int key)
+{
+    int left = 0;
+    int right = arr.length - 1;
+    while(left <= right)
+    {
+        int mid = (left + right) / 2;
+        if(arr[mid] == key)
+            return mid;
+        else if (key < arr[mid])
+            right = mid - 1;
+        else 
+            left = mid + 1;
+    }
+    return -1;
+}  
+</code></pre>
+            <br><h3>Sorting</h3>
+            <p>Now we will cover two sorting algorithms.</p>
+            <br><p>The first algorithm is selection sort, which finds the maximum value among the first nth elements. It is then swapped with the value at the current index and then the counter is decreased by 1. These steps are repeated until the length of n is equal to 1. The sort has a time complexity of O(n^2), this means that for each time the outer loop executes (which executes n times), the inner loop executes n times. This means that the sort have trouble dealing with larger data sets as the time increases quadratically.</p>
+<pre><code class = "language-java hljs">public static int selectionSort(int [] arr)
+{
+    int n = arr.length - 1;
+    while(n > 1)
+    {
+        int max = 0;
+        for(int i = 1; i < n; i++)
+        {
+            if(arr[i] > arr[max])
+                max = k;
+        }
+
+        int temp = arr[max];
+        arr[max] = arr[n-1];
+        arr[n-1] = temp;
+        n--;
+    }
+}
+</code></pre>
+            <br><p>The next algorithm is insertion sort, which inserts the current element into a sorted part of the array. After it has been inserted, the sorted array’s size will increase by one. This is repeated until the size of the sorted array is the same as the original array. The average time complexity is O(n^2) which is the same as selection sort, therefore it shares the same disadvantage where it has trouble dealing with large data sets.</p>
+<pre><code class = "language-java hljs">public static int insertionSort(int [] arr)
+{
+    for(int i = 0; i < arr.length; i++)
+    {
+        int temp = arr[i];
+        int index = i - 1;
+
+        while(temp > 0 && arr[index] > temp)
+        {
+            arr[index] = arr[index-1];
+            index--;
+        }
+        arr[index] = temp;
+    }
+}
+</code></pre>
         </div>
         
         <div class = "footer">
-            <a href = "https://dmoj.ca/user/Supreme_Leader"><img src = "dmoj.png" alt = "My Dmoj Account" style = "height: 50px;"></a>
-            <a href = "https://github.com/DavidGeng7"><i class = "fa fa-github"></i></a>
+            <p></p>
+            <a href = "https://dmoj.ca/user/Supreme_Leader"><img src = "dmoj.png" alt = "My DMOJ Account" style = "height: 65px; width: 65px"></a>
+            <a href = "https://github.com/DavidGeng7"><img src = "github.png" alt = "My Github Account" style = "height: 60px; width: 60px; margin-left: 50px"></a>
+            <a href = "https://mcpt.ca/user/Supreme_Leader"><img src = "mcpt.png" alt = "My MCPT Account" style = "height: 60px; width: 60px; margin-left: 50px"></a>
+            <a href = "mailto:davidgeng007@gmail.com"><img src = "email.png" alt = "Send Email" style = "height: 60px; width: 60px; margin-left: 50px"></a>
+            <p>@ Copyright 2021, David Geng</p>
         </div>
     </body>
 </html>
