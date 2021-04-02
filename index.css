@@ -92,7 +92,7 @@ body {
     
 }
 
-.content button {
+.content a {
     display: inline-block;
     background-color: #2e2e2e;
     border: none;
@@ -106,7 +106,7 @@ body {
     transition-duration: 0.5s;
 }
 
-.content button:hover {
+.content a:hover {
     background-color: whitesmoke;
     color: black;
 }
